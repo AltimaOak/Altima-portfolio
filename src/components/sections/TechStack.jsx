@@ -1,34 +1,37 @@
-import { motion } from 'framer-motion';
 import { SectionTitle } from '../ui/SectionTitle';
 
 export const TechStack = () => {
   const technologies = [
-    "React", "JavaScript", "Node.js", "Python", 
-    "FastAPI", "PostgreSQL", "MongoDB", "Firebase", 
-    "Docker", "Git", "Tailwind CSS", "OpenAI", "Gemini"
+    { name: "React", icon: "⚛️" },
+    { name: "Next.js", icon: "▲" },
+    { name: "Node.js", icon: "🟢" },
+    { name: "Python", icon: "🐍" },
+    { name: "AWS", icon: "☁️" },
+    { name: "Tailwind CSS", icon: "🌊" },
+    { name: "TypeScript", icon: "📘" },
+    { name: "PostgreSQL", icon: "🐘" },
+    { name: "OpenAI", icon: "🧠" },
+    { name: "Docker", icon: "🐳" },
   ];
 
   return (
-    <section className="py-24 bg-bg-secondary relative overflow-hidden">
+    <section className="py-24 bg-white border-y border-border-primary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle 
-          title="Technologies We Use" 
-          subtitle="Modern tools for modern problems. We leverage the best technologies to build scalable solutions."
+          title="Technology Stack." 
+          subtitle="We use the most robust, modern technologies to build scalable solutions."
+          className="text-center md:text-left"
         />
 
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6 mt-12 max-w-4xl mx-auto">
+        <div className="flex flex-wrap justify-center md:justify-start gap-4">
           {technologies.map((tech, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.05 }}
-              whileHover={{ y: -5, scale: 1.05 }}
-              className="px-6 py-3 bg-white rounded-full shadow-sm border border-gray-100 font-medium text-text-heading cursor-default hover:shadow-md hover:border-primary/30 transition-all"
+            <div 
+              key={index} 
+              className="px-6 py-3 bg-bg-secondary rounded-[20px] border border-border-primary flex items-center gap-3 hover:-translate-y-1 hover:neo-shadow transition-all duration-300"
             >
-              {tech}
-            </motion.div>
+              <span className="text-xl grayscale">{tech.icon}</span>
+              <span className="font-medium text-text-heading text-sm">{tech.name}</span>
+            </div>
           ))}
         </div>
       </div>

@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #FF7A00;
-  --color-secondary: #FFC83D;
-  --color-accent: #FF5D5D;
-  --color-accent-blue: #5BA7FF;
+  --color-primary: #111111;
+  --color-secondary: #2563EB;
+  --color-accent: #2563EB;
+  --color-accent-blue: #2563EB;
   
-  --color-text-heading: #1F2937;
-  --color-text-body: #5B6472;
+  --color-text-heading: #111111;
+  --color-text-body: #6B7280;
   
-  --color-bg-primary: #FFFDF8;
-  --color-bg-secondary: #FFF6E9;
+  --color-bg-primary: #FAFAFA;
+  --color-bg-secondary: #F5F5F5;
   
   --color-card-bg: #FFFFFF;
-  --color-border-primary: rgba(255, 122, 0, 0.15);
+  --color-border-primary: #E5E7EB;
 
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
@@ -31,10 +31,19 @@
 
 @layer utilities {
   .soft-shadow {
-    box-shadow: 0 10px 40px -10px rgba(255, 122, 0, 0.08);
+    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .neo-shadow {
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
   }
   
   .glass-card {
-    @apply bg-white/80 backdrop-blur-md border border-border-primary;
+    @apply bg-white/70 backdrop-blur-xl border border-border-primary;
+  }
+
+  .dot-bg {
+    background-image: radial-gradient(#E5E7EB 1px, transparent 1px);
+    background-size: 24px 24px;
   }
 }

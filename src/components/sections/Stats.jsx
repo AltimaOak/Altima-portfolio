@@ -16,23 +16,20 @@ export const Stats = () => {
   ];
 
   return (
-    <section className="py-16 bg-white border-y border-gray-100 relative overflow-hidden">
-      <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-3xl"></div>
-      
+    <section className="py-12 bg-bg-primary relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10" ref={ref}>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-4xl md:text-5xl font-poppins font-bold text-primary mb-2 flex justify-center items-baseline">
+            <div key={index} className="text-center p-6 bg-white rounded-[20px] border border-border-primary neo-shadow">
+              <div className="text-4xl md:text-5xl font-poppins font-bold text-text-heading mb-2 flex justify-center items-baseline">
                 {inView ? (
                   <CountUp end={stat.value} duration={2.5} separator="," />
                 ) : (
                   <span>0</span>
                 )}
-                <span>{stat.suffix}</span>
+                <span className="text-secondary">{stat.suffix}</span>
               </div>
-              <p className="text-text-heading font-medium text-lg">{stat.label}</p>
+              <p className="text-text-body font-medium text-sm tracking-wide uppercase">{stat.label}</p>
             </div>
           ))}
         </div>
