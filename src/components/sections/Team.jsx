@@ -67,8 +67,8 @@ export const Team = () => {
               className="group bg-white rounded-[24px] border border-border-primary overflow-hidden hover:neo-shadow transition-all duration-300"
             >
               <div className="aspect-square overflow-hidden relative">
-                {/* LinkedIn link only on hover */}
-                <div className="absolute inset-0 bg-black/50 z-10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-[2px]">
+                {/* LinkedIn link only on hover for desktop */}
+                <div className="absolute inset-0 bg-black/50 z-10 opacity-0 group-hover:opacity-100 transition-opacity hidden lg:flex items-center justify-center backdrop-blur-[2px]">
                   <a 
                     href={member.linkedin} 
                     target="_blank" 
@@ -79,6 +79,18 @@ export const Team = () => {
                     <LinkedinIcon size={20} />
                   </a>
                 </div>
+
+                {/* Floating LinkedIn link always visible on mobile/tablet */}
+                <a 
+                  href={member.linkedin} 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="absolute bottom-4 right-4 z-20 w-10 h-10 rounded-full bg-white text-secondary flex items-center justify-center shadow-md active:bg-secondary active:text-white transition-colors lg:hidden"
+                  title="View LinkedIn Profile"
+                >
+                  <LinkedinIcon size={18} />
+                </a>
+
                 <img 
                   src={member.image} 
                   alt={member.name} 
