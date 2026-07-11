@@ -4,8 +4,8 @@ export const Button = ({ children, variant = 'primary', className = '', ...props
   const baseStyles = 'inline-flex items-center justify-center font-inter font-medium transition-all duration-300 focus:outline-none';
   
   const variants = {
-    primary: 'bg-primary text-white hover:bg-gray-800 shadow-sm hover:shadow-md hover:-translate-y-0.5 rounded-[20px]',
-    secondary: 'bg-white text-text-heading border border-border-primary hover:border-gray-300 hover:bg-gray-50 shadow-sm hover:shadow-md hover:-translate-y-0.5 rounded-[20px]',
+    primary: 'bg-primary text-white hover:bg-[#121C37] shadow-sm hover:shadow-md hover:-translate-y-0.5 rounded-[20px]',
+    secondary: 'bg-white text-text-heading border border-border-primary hover:border-[#C8BFB2] hover:bg-[#FAF9F6] shadow-sm hover:shadow-md hover:-translate-y-0.5 rounded-[20px]',
     text: 'text-text-body hover:text-primary rounded-lg',
   };
 

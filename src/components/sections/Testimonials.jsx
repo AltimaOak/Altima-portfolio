@@ -47,7 +47,7 @@ export const Testimonials = () => {
               {testimonials.map((t, index) => (
                 <div key={index} className="w-full flex-shrink-0 px-4">
                   <div className="bg-white rounded-[24px] p-10 md:p-14 border border-border-primary neo-shadow text-center relative">
-                    <Quote className="w-12 h-12 text-gray-200 absolute top-8 left-8" />
+                    <Quote className="w-12 h-12 text-stone-200 absolute top-8 left-8" />
                     
                     <p className="text-xl md:text-2xl text-text-heading font-medium leading-relaxed mb-10 relative z-10 mt-6">
                       "{t.text}"

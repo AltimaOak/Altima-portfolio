@@ -80,7 +80,7 @@ export const Portfolio = () => {
                 
                 <div className="flex flex-wrap gap-2 mb-8">
                   {project.tags.map((tag, i) => (
-                    <span key={i} className="text-xs font-medium text-text-body bg-bg-secondary px-2.5 py-1 rounded-md border border-gray-100">
+                    <span key={i} className="text-xs font-medium text-text-body bg-bg-secondary px-2.5 py-1 rounded-md border border-border-primary">
                       {tag}
                     </span>
                   ))}

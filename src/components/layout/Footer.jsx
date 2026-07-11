@@ -20,7 +20,7 @@ export const Footer = () => {
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=altimasoftwaresolutions@gmail.com" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="text-gray-400 hover:text-primary transition-colors"
+                className="text-stone-400 hover:text-primary transition-colors"
               >
                 <Mail size={18} />
               </a>

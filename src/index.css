@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #111111;
-  --color-secondary: #2563EB;
-  --color-accent: #2563EB;
-  --color-accent-blue: #2563EB;
+  --color-primary: #0A1128;      /* Deep Midnight Navy (from Logo) */
+  --color-secondary: #0052D4;    /* Sapphire Blue (from Logo) */
+  --color-accent: #0066FF;       /* Electric Blue (from Logo) */
+  --color-accent-blue: #38BDF8;  /* Light Sky Blue (from Logo) */
   
-  --color-text-heading: #111111;
-  --color-text-body: #6B7280;
+  --color-text-heading: #0A1128; /* Deep Midnight Navy */
+  --color-text-body: #3E4E68;    /* Slate Navy */
   
-  --color-bg-primary: #FAFAFA;
-  --color-bg-secondary: #F5F5F5;
+  --color-bg-primary: #FAF9F6;   /* Alabaster / Warm Off-White */
+  --color-bg-secondary: #F3EFE7; /* Warm Sand */
   
   --color-card-bg: #FFFFFF;
-  --color-border-primary: #E5E7EB;
+  --color-border-primary: #E5DFD5; /* Warm Sand Border */
 
   --font-poppins: "Poppins", sans-serif;
   --font-inter: "Inter", sans-serif;
