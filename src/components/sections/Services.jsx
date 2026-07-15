@@ -6,64 +6,72 @@ export const Services = () => {
   const services = [
     {
       title: "Website Development",
-      desc: "Custom, responsive, and high-performance websites built with modern frameworks.",
-      icon: <Monitor className="w-6 h-6 text-primary" />
+      desc: "Custom, responsive websites and web applications built with modern frameworks.",
+      icon: Monitor
     },
     {
       title: "Custom Software",
       desc: "Tailored business applications designed to streamline operations and scale.",
-      icon: <Code className="w-6 h-6 text-primary" />
+      icon: Code
     },
     {
       title: "AI Solutions",
-      desc: "Intelligent integrations using OpenAI and Gemini to automate workflows.",
-      icon: <BrainCircuit className="w-6 h-6 text-primary" />
+      desc: "Intelligent integrations using OpenAI and GenAI to automate workflows.",
+      icon: BrainCircuit
     },
     {
       title: "Mobile Applications",
       desc: "Native and cross-platform mobile apps for iOS and Android.",
-      icon: <Smartphone className="w-6 h-6 text-primary" />
+      icon: Smartphone
     },
     {
       title: "UI/UX Design",
-      desc: "Beautiful, user-centric interfaces that engage and convert visitors.",
-      icon: <Layout className="w-6 h-6 text-primary" />
+      desc: "Beautiful, user-centered interfaces that engage and convert visitors.",
+      icon: Layout
     },
     {
       title: "Cloud Deployment",
-      desc: "Secure and scalable hosting architectures using AWS, Vercel, and Docker.",
-      icon: <Cloud className="w-6 h-6 text-primary" />
+      desc: "Leverage reliable cloud platforms like AWS, Vercel, and Docker for seamless deployment.",
+      icon: Cloud
     },
     {
       title: "API Development",
-      desc: "Robust REST and GraphQL APIs to connect your digital ecosystem.",
-      icon: <Webhook className="w-6 h-6 text-primary" />
+      desc: "Robust REST and GraphQL APIs to connect your apps and systems effortlessly.",
+      icon: Webhook
     },
     {
       title: "Maintenance & Support",
-      desc: "Ongoing support to ensure your digital products remain secure and up-to-date.",
-      icon: <Wrench className="w-6 h-6 text-primary" />
+      desc: "Ongoing support to ensure your digital products remain secure, up-to-date, and optimized.",
+      icon: Wrench
     }
   ];
 
   return (
-    <section id="services" className="py-16 bg-bg-secondary">
+    <section id="services" className="py-20 bg-bg-secondary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle 
-          title="Our Services." 
-          subtitle="Comprehensive digital solutions tailored to your unique business needs."
+          tag="Our Services"
+          title="Comprehensive Digital Solutions For Your Business Needs."
+          className="text-left"
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <AnimatedCard key={index} delay={index * 0.1} className="group hover:border-secondary/30">
-              <div className="mb-6 inline-flex p-3 rounded-xl bg-white border border-border-primary group-hover:scale-105 group-hover:text-secondary transition-all duration-300">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-poppins font-semibold text-text-heading mb-3">{service.title}</h3>
-              <p className="text-text-body text-sm leading-relaxed">{service.desc}</p>
-            </AnimatedCard>
-          ))}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {services.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <AnimatedCard 
+                key={index} 
+                delay={index * 0.05} 
+                className="group hover:border-primary/30 flex flex-col justify-start text-left bg-white"
+              >
+                <div className="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center mb-6 group-hover:scale-105 transition-transform duration-300 flex-shrink-0">
+                  <IconComponent className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-space-grotesk font-semibold text-text-heading mb-3">{service.title}</h3>
+                <p className="text-text-body text-sm leading-relaxed font-inter">{service.desc}</p>
+              </AnimatedCard>
+            );
+          })}
         </div>
       </div>
     </section>

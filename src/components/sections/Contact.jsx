@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { SectionTitle } from '../ui/SectionTitle';
 import { Button } from '../ui/Button';
-import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import { Mail, Phone, Send } from 'lucide-react';
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -41,36 +40,37 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-16 bg-white border-t border-border-primary">
+    <section id="contact" className="py-20 bg-bg-warm border-t border-border-primary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle 
+          tag="Get In Touch"
           title="Let's build together." 
           subtitle="Ready to start your next project? Get in touch and let's discuss how we can help your business grow."
-          className="text-center md:text-left"
+          className="text-left"
         />
 
         <div className="flex flex-col lg:flex-row gap-10 mt-10">
           <div className="w-full lg:w-5/12">
-            <div className="bg-bg-primary rounded-[24px] p-6 sm:p-10 border border-border-primary h-full flex flex-col justify-between">
+            <div className="bg-white rounded-2xl p-6 sm:p-10 border border-border-primary soft-shadow h-full flex flex-col justify-between text-left">
               <div>
-                <h3 className="text-2xl font-poppins font-bold text-text-heading mb-6">Contact Information</h3>
-                <p className="text-text-body text-sm md:text-base mb-8 leading-relaxed">
+                <h3 className="text-2xl font-space-grotesk font-bold text-text-heading mb-6">Contact Information</h3>
+                <p className="text-text-body text-sm md:text-base mb-8 leading-relaxed font-inter">
                   Have a question or a project proposal? Send us a message and our team will get back to you within 24 hours.
                 </p>
               </div>
               
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-full bg-white border border-border-primary flex items-center justify-center flex-shrink-0">
-                    <Mail className="w-4 h-4 text-secondary" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                    <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-poppins font-medium text-text-heading text-xs uppercase tracking-wider text-text-body/60">Email Us</h4>
+                    <h4 className="font-space-grotesk font-semibold text-xs uppercase tracking-wider text-text-body/60">Email Us</h4>
                     <a 
                       href="https://mail.google.com/mail/?view=cm&fs=1&to=altimasoftwaresolutions@gmail.com" 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="text-text-heading font-medium hover:text-secondary transition-colors text-sm sm:text-base"
+                      className="text-text-heading font-semibold hover:text-primary transition-colors text-sm sm:text-base font-inter mt-1 block"
                     >
                       altimasoftwaresolutions@gmail.com
                     </a>
@@ -78,12 +78,12 @@ export const Contact = () => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-11 h-11 rounded-full bg-white border border-border-primary flex items-center justify-center flex-shrink-0">
-                    <Phone className="w-4 h-4 text-secondary" />
+                  <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0 text-primary">
+                    <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="font-poppins font-medium text-text-heading text-xs uppercase tracking-wider text-text-body/60">Call Us</h4>
-                    <a href="tel:+918108839330" className="text-text-heading font-medium hover:text-secondary transition-colors text-sm sm:text-base">+918108839330</a>
+                    <h4 className="font-space-grotesk font-semibold text-xs uppercase tracking-wider text-text-body/60">Call Us</h4>
+                    <a href="tel:+918108839330" className="text-text-heading font-semibold hover:text-primary transition-colors text-sm sm:text-base font-inter mt-1 block">+918108839330</a>
                   </div>
                 </div>
               </div>
@@ -91,28 +91,28 @@ export const Contact = () => {
           </div>
 
           <div className="w-full lg:w-7/12">
-            <form onSubmit={handleSubmit} className="bg-white rounded-[24px] p-6 sm:p-10 border border-border-primary neo-shadow">
+            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-6 sm:p-10 border border-border-primary soft-shadow text-left">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-text-heading mb-2">Full Name *</label>
+                  <label htmlFor="name" className="block text-sm font-semibold text-text-heading mb-2 font-space-grotesk">Full Name *</label>
                   <input 
                     type="text" 
                     id="name" 
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-border-primary text-text-heading focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-border-primary text-text-heading focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-inter"
                     placeholder="Enter Your Name"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-text-heading mb-2">Email Address *</label>
+                  <label htmlFor="email" className="block text-sm font-semibold text-text-heading mb-2 font-space-grotesk">Email Address *</label>
                   <input 
                     type="email" 
                     id="email" 
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-border-primary text-text-heading focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all text-sm"
+                    className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-border-primary text-text-heading focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-inter"
                     placeholder="Enter Your Email"
                     required
                   />
@@ -120,25 +120,25 @@ export const Contact = () => {
               </div>
 
               <div className="mb-6">
-                <label htmlFor="subject" className="block text-sm font-semibold text-text-heading mb-2">Subject</label>
+                <label htmlFor="subject" className="block text-sm font-semibold text-text-heading mb-2 font-space-grotesk">Subject</label>
                 <input 
                   type="text" 
                   id="subject" 
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-border-primary text-text-heading focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all text-sm"
+                  className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-border-primary text-text-heading focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-inter"
                   placeholder="How can we help?"
                 />
               </div>
 
               <div className="mb-6">
-                <label htmlFor="message" className="block text-sm font-semibold text-text-heading mb-2">Message *</label>
+                <label htmlFor="message" className="block text-sm font-semibold text-text-heading mb-2 font-space-grotesk">Message *</label>
                 <textarea 
                   id="message" 
                   rows="4" 
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-border-primary text-text-heading focus:outline-none focus:ring-2 focus:ring-secondary/20 focus:border-secondary transition-all resize-none text-sm"
+                  className="w-full px-4 py-3 rounded-xl bg-bg-primary border border-border-primary text-text-heading focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all resize-none text-sm font-inter"
                   placeholder="Tell us about your project..."
                   required
                 ></textarea>

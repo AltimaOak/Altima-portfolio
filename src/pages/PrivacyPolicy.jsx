@@ -24,7 +24,7 @@ export const PrivacyPolicy = () => {
             </div>
           </div>
           
-          <div className="bg-white rounded-[20px] p-6 sm:p-8 border border-border-primary neo-shadow space-y-6">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-border-primary soft-shadow space-y-6">
             <div>
               <h3 className="text-base sm:text-lg font-poppins font-semibold text-text-heading mb-1.5">1. Data Collection</h3>
               <p className="text-text-body text-xs sm:text-sm leading-relaxed">

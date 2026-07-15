@@ -48,12 +48,13 @@ export const Team = () => {
     }
   ];
   return (
-    <section id="team" className="py-16 bg-bg-secondary">
+    <section id="team" className="py-20 bg-bg-warm border-t border-border-primary">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <SectionTitle 
-          title="Our Team" 
+          tag="Our Team"
+          title="Meet the Minds Behind Altima." 
           subtitle="The engineering and design minds behind Altima Software Solutions."
-          className="text-center md:text-left mb-16"
+          className="text-left mb-16"
         />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -64,7 +65,7 @@ export const Team = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group bg-white rounded-[24px] border border-border-primary overflow-hidden hover:neo-shadow transition-all duration-300"
+              className="group bg-white rounded-2xl border border-border-primary overflow-hidden hover:neo-shadow transition-all duration-300 flex flex-col justify-between text-left"
             >
               <div className="aspect-square overflow-hidden relative">
                 {/* LinkedIn link only on hover for desktop */}
@@ -73,7 +74,7 @@ export const Team = () => {
                     href={member.linkedin} 
                     target="_blank" 
                     rel="noopener noreferrer" 
-                    className="w-12 h-12 rounded-full bg-white text-secondary flex items-center justify-center hover:bg-secondary hover:text-white transition-colors shadow-lg transform hover:scale-110"
+                    className="w-12 h-12 rounded-full bg-white text-primary flex items-center justify-center hover:bg-primary hover:text-white transition-colors shadow-lg transform hover:scale-110"
                     title="View LinkedIn Profile"
                   >
                     <LinkedinIcon size={20} />
@@ -85,7 +86,7 @@ export const Team = () => {
                   href={member.linkedin} 
                   target="_blank" 
                   rel="noopener noreferrer" 
-                  className="absolute bottom-4 right-4 z-20 w-10 h-10 rounded-full bg-white text-secondary flex items-center justify-center shadow-md active:bg-secondary active:text-white transition-colors lg:hidden"
+                  className="absolute bottom-4 right-4 z-20 w-10 h-10 rounded-full bg-white text-primary flex items-center justify-center shadow-md active:bg-primary active:text-white transition-colors lg:hidden"
                   title="View LinkedIn Profile"
                 >
                   <LinkedinIcon size={18} />
@@ -97,9 +98,9 @@ export const Team = () => {
                   className="w-full h-full object-cover grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:scale-105"
                 />
               </div>
-              <div className="p-6 text-center border-t border-border-primary">
-                <h3 className="text-lg font-poppins font-semibold text-text-heading mb-1">{member.name}</h3>
-                <p className="text-secondary text-sm font-medium">{member.role}</p>
+              <div className="p-6 text-center border-t border-border-primary bg-white">
+                <h3 className="text-lg font-space-grotesk font-semibold text-text-heading mb-1">{member.name}</h3>
+                <p className="text-primary text-sm font-semibold font-inter">{member.role}</p>
               </div>
             </motion.div>
           ))}

@@ -1,21 +1,23 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #0A1128;      /* Deep Midnight Navy (from Logo) */
-  --color-secondary: #0052D4;    /* Sapphire Blue (from Logo) */
-  --color-accent: #0066FF;       /* Electric Blue (from Logo) */
-  --color-accent-blue: #38BDF8;  /* Light Sky Blue (from Logo) */
+  --color-primary: #E11D48;        /* Primary Crimson */
+  --color-secondary: #0D1B2A;      /* Dark Navy */
+  --color-accent-blue: #FF6B6B;    /* Accent Red (aliased to accent-blue for compatibility) */
+  --color-accent-red: #FF6B6B;     /* Accent Red */
   
-  --color-text-heading: #0A1128; /* Deep Midnight Navy */
-  --color-text-body: #3E4E68;    /* Slate Navy */
+  --color-text-heading: #0D1B2A;   /* Dark Navy */
+  --color-text-body: #4B5563;      /* Text / Body */
   
-  --color-bg-primary: #FAF9F6;   /* Alabaster / Warm Off-White */
-  --color-bg-secondary: #F3EFE7; /* Warm Sand */
+  --color-bg-primary: #FFF7F4;     /* Warm Background */
+  --color-bg-secondary: #FFF0ED;   /* Section Background */
+  --color-bg-warm: #FFE4E8;        /* Light Red */
   
   --color-card-bg: #FFFFFF;
-  --color-border-primary: #E5DFD5; /* Warm Sand Border */
+  --color-border-primary: #F1D9D6; /* Border / Line */
 
-  --font-poppins: "Poppins", sans-serif;
+  --font-poppins: "Space Grotesk", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
   --font-inter: "Inter", sans-serif;
 }
 
@@ -25,17 +27,17 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-poppins text-text-heading;
+    @apply font-space-grotesk text-text-heading;
   }
 }
 
 @layer utilities {
   .soft-shadow {
-    box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px -10px rgba(13, 27, 42, 0.04), 0 1px 3px rgba(13, 27, 42, 0.02);
   }
 
   .neo-shadow {
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 20px 40px -15px rgba(13, 27, 42, 0.08);
   }
   
   .glass-card {
@@ -43,7 +45,8 @@
   }
 
   .dot-bg {
-    background-image: radial-gradient(#E5E7EB 1px, transparent 1px);
+    background-image: radial-gradient(var(--color-border-primary) 1.5px, transparent 1.5px);
     background-size: 24px 24px;
   }
 }
+

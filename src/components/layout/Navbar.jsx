@@ -27,28 +27,30 @@ export const Navbar = () => {
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-        isScrolled ? 'bg-white/70 backdrop-blur-xl border-border-primary py-4' : 'bg-transparent border-transparent py-6'
+        isScrolled ? 'bg-bg-primary/90 backdrop-blur-md border-border-primary py-4 soft-shadow' : 'bg-transparent border-transparent py-6'
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex-shrink-0">
             <Link to="/#home" className="flex items-center">
-              <img src="/logo.png" alt="Altima Software Solutions" className="h-12 w-auto object-contain" />
+              <img src="/logo.png" alt="Altima Software Solutions" className="h-10 w-auto object-contain" />
             </Link>
           </div>
           
           <nav className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <Link 
+              <a 
                 key={link.name} 
-                to={link.href}
-                className="text-text-body hover:text-primary text-sm font-medium transition-colors"
+                href={link.href}
+                className="text-text-heading hover:text-primary text-sm font-semibold tracking-wide transition-colors relative py-1"
               >
                 {link.name}
-              </Link>
+              </a>
             ))}
           </nav>
+
+
 
           <div className="md:hidden flex items-center">
             <button 
@@ -67,19 +69,20 @@ export const Navbar = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-border-primary overflow-hidden"
+            className="md:hidden bg-bg-primary border-t border-border-primary overflow-hidden shadow-lg"
           >
-            <div className="px-4 pt-2 pb-6 space-y-2 flex flex-col mt-2">
+            <div className="px-4 pt-2 pb-6 space-y-3 flex flex-col mt-2">
               {navLinks.map((link) => (
-                <Link
+                <a
                   key={link.name}
-                  to={link.href}
+                  href={link.href}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-3 py-3 text-base font-medium text-text-heading hover:text-primary hover:bg-bg-secondary rounded-xl transition-colors"
+                  className="block px-3 py-2 text-base font-semibold text-text-heading hover:text-primary hover:bg-bg-secondary rounded-xl transition-colors"
                 >
                   {link.name}
-                </Link>
+                </a>
               ))}
+
             </div>
           </motion.div>
         )}
