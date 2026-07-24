@@ -92,7 +92,7 @@ export const Footer = () => {
                 <InstagramIcon size={16} />
               </a>
               <a 
-                href="mailto:altimasoftwaresolutions@gmail.com" 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=altimasoftwaresolutions@gmail.com" 
                 className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-primary hover:bg-white/5 transition-all duration-300"
               >
                 <MailIcon size={16} />
