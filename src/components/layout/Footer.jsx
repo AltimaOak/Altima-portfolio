@@ -82,16 +82,9 @@ export const Footer = () => {
             </p>
             {/* Social Icons */}
             <div className="flex gap-3 items-center">
+              
               <a 
-                href="https://www.linkedin.com/company/altima-software-solutions/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-primary hover:bg-white/5 transition-all duration-300"
-              >
-                <LinkedinIcon size={16} />
-              </a>
-              <a 
-                href="https://www.instagram.com/altimasoftwares/" 
+                href="https://www.instagram.com/altimasoftwaresolutions?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-primary hover:bg-white/5 transition-all duration-300"
@@ -99,7 +92,7 @@ export const Footer = () => {
                 <InstagramIcon size={16} />
               </a>
               <a 
-                href="mailto:contact@altimasoftware.com" 
+                href="mailto:altimasoftwaresolutions@gmail.com" 
                 className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:border-primary hover:bg-white/5 transition-all duration-300"
               >
                 <MailIcon size={16} />
