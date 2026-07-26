@@ -2,11 +2,12 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/Button';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,13 +17,43 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Each link: if `to` is set, use React Router Link; otherwise use plain href anchor
   const navLinks = [
     { name: 'Home', href: '/#home' },
-    { name: 'About', href: '/#about' },
+    { name: 'About', to: '/about' },
     { name: 'Services', href: '/#services' },
-    { name: 'Team', href: '/#team' },
+    { name: 'Team', to: '/team' },
     { name: 'Contact', href: '/#contact' },
   ];
+
+  const linkClass = "text-text-heading hover:text-primary text-sm font-semibold tracking-wide transition-colors relative py-1";
+  const mobileLinkClass = "block px-3 py-2 text-base font-semibold text-text-heading hover:text-primary hover:bg-bg-secondary rounded-xl transition-colors";
+
+  const renderNavLink = (link, mobile = false) => {
+    const cls = mobile ? mobileLinkClass : linkClass;
+    if (link.to) {
+      return (
+        <Link
+          key={link.name}
+          to={link.to}
+          className={cls}
+          onClick={() => mobile && setIsMobileMenuOpen(false)}
+        >
+          {link.name}
+        </Link>
+      );
+    }
+    return (
+      <a
+        key={link.name}
+        href={link.href}
+        className={cls}
+        onClick={() => mobile && setIsMobileMenuOpen(false)}
+      >
+        {link.name}
+      </a>
+    );
+  };
 
   return (
     <header 
@@ -39,18 +70,8 @@ export const Navbar = () => {
           </div>
           
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a 
-                key={link.name} 
-                href={link.href}
-                className="text-text-heading hover:text-primary text-sm font-semibold tracking-wide transition-colors relative py-1"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) => renderNavLink(link, false))}
           </nav>
-
-
 
           <div className="md:hidden flex items-center">
             <button 
@@ -72,17 +93,7 @@ export const Navbar = () => {
             className="md:hidden bg-bg-primary border-t border-border-primary overflow-hidden shadow-lg"
           >
             <div className="px-4 pt-2 pb-6 space-y-3 flex flex-col mt-2">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block px-3 py-2 text-base font-semibold text-text-heading hover:text-primary hover:bg-bg-secondary rounded-xl transition-colors"
-                >
-                  {link.name}
-                </a>
-              ))}
-
+              {navLinks.map((link) => renderNavLink(link, true))}
             </div>
           </motion.div>
         )}
